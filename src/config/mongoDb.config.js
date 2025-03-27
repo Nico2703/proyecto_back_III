@@ -1,11 +1,12 @@
 import mongoose from "mongoose";
 import envsConfig from "./envs.config.js";
+import { logger } from "../common/utils/logger.js";
 
 export const connectDB = () => {
   try {
     mongoose.connect(envsConfig.MONGO_URL);
-    console.log("MongoDB - Conexión exitosa");
+    logger.info("MongoDB - Conexión exitosa");
   } catch (error) {
-    console.log("Error al conectar MongoDB");
+    logger.error("Error al conectar MongoDB");
   }
 }
