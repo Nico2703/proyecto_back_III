@@ -13,12 +13,14 @@ router.get('/mockingpets/:amount', validateSchema(petsMocksSchema), petControlle
 
 router.get('/mockingusers/:amount', validateSchema(usersMocksSchema), userController.createUsersMocks);
 
-router.post('/generateData', async (req, res) => {
+router.post('/generateData', async (req, res, next) => {
     try {
         const { users, pets } = req.body;  
 
         if (isNaN(users) || isNaN(pets)) {
-            return res.status(400).json({ message: 'Cantidad de usuarios o mascotas no válida' });
+            const error = new Error('Cantidad de usuarios o mascotas no válida');
+            error.statusCode = 404; 
+            throw error; 
         }
 
         const [generatedUsers, generatedPets] = await Promise.all([
@@ -32,8 +34,7 @@ router.post('/generateData', async (req, res) => {
         });
 
     } catch (error) {
-        console.log(error);
-        res.status(500).json({ message: 'Error interno de servidor' });
+        next(error);
     }
 });
 
