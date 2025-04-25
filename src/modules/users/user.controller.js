@@ -14,6 +14,17 @@ class UserController {
     }
   }
 
+  async create(req = request, res = response, next) {
+    try {
+      const body = req.body;
+      const user = await userService.create(body);
+        
+      res.status(201).json(user);
+    } catch (error) {
+      next(error);
+    }
+  }
+
   async getAll(req = request, res = response, next) {
     try {
       const users = await userService.getAll();
@@ -44,6 +55,31 @@ class UserController {
       res.status(200).json(user);
     } catch (error) {
       next(error);
+    }
+  }
+
+  async update(req = request, res = response, next){
+    try {
+      const { id } = req.params;
+      const body = req.body;
+          
+      const updateUser = await userService.update(id, body);
+      res.status(200).json(updateUser);
+    
+    } catch (error) {
+      next(error)
+    }
+  }
+    
+  async delete(req = request, res = response, next){
+    try {
+      const { id } = req.params;
+          
+      const deleteUser = await userService.delete(id);
+      res.status(200).json({message: `Usuario ${deleteUser} ha sido eliminado`});
+    
+    } catch (error) {
+      next(error)
     }
   }
 

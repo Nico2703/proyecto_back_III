@@ -1,7 +1,5 @@
 import { generateSchemaProperties } from "../utils/generatePropertiesSchems.js";
 
-
-
 export const userDocSchema = {
   type: "object",
   properties: {

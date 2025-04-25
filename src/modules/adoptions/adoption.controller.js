@@ -46,6 +46,18 @@ class AdoptionController {
       next(error);
     }
   }
+
+  async delete(req = request, res = response, next){
+    try {
+      const { id } = req.params;
+            
+      const deleteAdoption = await adoptionService.delete(id);
+      res.status(200).json({message: `Adopción ${deleteAdoption} ha sido eliminada`});
+      
+    } catch (error) {
+      next(error)
+    }
+  }
 }
 
 export const adoptionController = new AdoptionController();

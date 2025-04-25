@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { petController } from "./pet.controller.js";
 import { validateSchema } from "../../common/middlewares/validateSchema.js";
-import { createSchema, updateSchema } from "./pet.schemas.js";
+import { createSchema, updateSchema } from "./pet.schema.js";
 import { objectIdSchema } from "../../common/schemas/objectId.schema.js";
 
 const router = Router();

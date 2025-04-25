@@ -8,7 +8,7 @@ export const userPaths = {
       tags: ["Users"],
       responses: {
         200: {
-          description: "Devuelve todos los usuario",
+          description: "Devuelve todos los usuarios",
           content: {
             "application/json": {
               schema: {

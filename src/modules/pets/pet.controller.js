@@ -63,7 +63,7 @@ class PetController {
         const { id } = req.params;
         const body = req.body;
         
-        const updatePet = await petService.updatePet(id, body);
+        const updatePet = await petService.update(id, body);
         res.status(200).json(updatePet);
   
       } catch (error) {
@@ -71,17 +71,17 @@ class PetController {
       }
     }
   
-    async delete(req = request, res = response, next){
-      try {
-        const { id } = req.params;
+  async delete(req = request, res = response, next){
+    try {
+      const { id } = req.params;
         
-        const deletePet = await petService.deletePet(id);
-        res.status(200).json({message: `Mascota con el id ${id} eliminada`});
+      const deletePet = await petService.delete(id);
+      res.status(200).json({message: `Mascota ${deletePet} ha sido eliminada`});
   
-      } catch (error) {
-        next(error)
-      }
+    } catch (error) {
+      next(error)
     }
+  }
 }
 
 export const petController = new PetController();

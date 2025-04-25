@@ -42,6 +42,16 @@ class AdoptionService {
 
     return adoption;
   }
+
+  async delete(id){
+    const adoption = await adoptionDao.getOne({ _id: id });
+    if (!adoption) {
+      const error = new Error('Adopción no encontrada');
+      error.statusCode = 404; 
+      throw error; ;
+    }
+    return await adoptionDao.remove(id);
+  }
 }
 
 export const adoptionService = new AdoptionService();

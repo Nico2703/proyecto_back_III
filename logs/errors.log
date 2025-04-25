@@ -98,3 +98,76 @@
   "path": "/api/users/67e45a3930915587b0e96cb",
   "method": "GET"
 }
+2025-04-25 17:54:04 [[31merror[39m]: Estado: 500 [POST] /api/adoptions -  Mensaje: Class constructor ObjectId cannot be invoked without 'new'
+2025-04-25 17:54:04 [[31merror[39m]: {
+  "statusCode": 500,
+  "files": [
+    "TypeError: Class constructor ObjectId cannot be invoked without 'new'",
+    "    at AdoptionService.create (file:///C:/Users/nico_/Desktop/Coderhouse/Backend%20III%20-%20Testing%20y%20Escalabilidad/curso_backend_III/proyecto_back_III/src/modules/adoptions/adoption.service.js:19:40)",
+    "    at create (file:///C:/Users/nico_/Desktop/Coderhouse/Backend%20III%20-%20Testing%20y%20Escalabilidad/curso_backend_III/proyecto_back_III/src/modules/adoptions/adoption.controller.js:42:46)",
+    "    at Layer.handle [as handle_request] (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\layer.js:95:5)",
+    "    at next (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\route.js:149:13)",
+    "    at file:///C:/Users/nico_/Desktop/Coderhouse/Backend%20III%20-%20Testing%20y%20Escalabilidad/curso_backend_III/proyecto_back_III/src/common/middlewares/validateSchema.js:52:5",
+    "    at Layer.handle [as handle_request] (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\layer.js:95:5)",
+    "    at next (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\route.js:149:13)",
+    "    at Route.dispatch (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\route.js:119:3)",
+    "    at Layer.handle [as handle_request] (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\layer.js:95:5)",
+    "    at C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\index.js:284:15"
+  ],
+  "message": "Class constructor ObjectId cannot be invoked without 'new'",
+  "path": "/api/adoptions",
+  "method": "POST"
+}
+2025-04-25 18:37:15 [[31merror[39m]: Estado: 500 [POST] /api/adoptions -  Mensaje: Cannot read properties of null (reading '_id')
+2025-04-25 18:37:15 [[31merror[39m]: {
+  "statusCode": 500,
+  "files": [
+    "TypeError: Cannot read properties of null (reading '_id')",
+    "    at AdoptionService.create (file:///C:/Users/nico_/Desktop/Coderhouse/Backend%20III%20-%20Testing%20y%20Escalabilidad/curso_backend_III/proyecto_back_III/src/modules/adoptions/adoption.service.js:38:29)",
+    "    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+    "    at async create (file:///C:/Users/nico_/Desktop/Coderhouse/Backend%20III%20-%20Testing%20y%20Escalabilidad/curso_backend_III/proyecto_back_III/src/modules/adoptions/adoption.controller.js:42:24)"
+  ],
+  "message": "Cannot read properties of null (reading '_id')",
+  "path": "/api/adoptions",
+  "method": "POST"
+}
+2025-04-25 19:29:20 [[31merror[39m]: Estado: 500 [POST] /api/adoptions -  Mensaje: mongoose is not defined
+2025-04-25 19:29:20 [[31merror[39m]: {
+  "statusCode": 500,
+  "files": [
+    "ReferenceError: mongoose is not defined",
+    "    at AdoptionService.create (file:///C:/Users/nico_/Desktop/Coderhouse/Backend%20III%20-%20Testing%20y%20Escalabilidad/curso_backend_III/proyecto_back_III/src/modules/adoptions/adoption.service.js:19:30)",
+    "    at create (file:///C:/Users/nico_/Desktop/Coderhouse/Backend%20III%20-%20Testing%20y%20Escalabilidad/curso_backend_III/proyecto_back_III/src/modules/adoptions/adoption.controller.js:42:46)",
+    "    at Layer.handle [as handle_request] (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\layer.js:95:5)",
+    "    at next (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\route.js:149:13)",
+    "    at file:///C:/Users/nico_/Desktop/Coderhouse/Backend%20III%20-%20Testing%20y%20Escalabilidad/curso_backend_III/proyecto_back_III/src/common/middlewares/validateSchema.js:52:5",
+    "    at Layer.handle [as handle_request] (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\layer.js:95:5)",
+    "    at next (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\route.js:149:13)",
+    "    at Route.dispatch (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\route.js:119:3)",
+    "    at Layer.handle [as handle_request] (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\layer.js:95:5)",
+    "    at C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\index.js:284:15"
+  ],
+  "message": "mongoose is not defined",
+  "path": "/api/adoptions",
+  "method": "POST"
+}
+2025-04-25 19:30:03 [[31merror[39m]: Estado: 500 [POST] /api/adoptions -  Mensaje: Class constructor ObjectId cannot be invoked without 'new'
+2025-04-25 19:30:03 [[31merror[39m]: {
+  "statusCode": 500,
+  "files": [
+    "TypeError: Class constructor ObjectId cannot be invoked without 'new'",
+    "    at AdoptionService.create (file:///C:/Users/nico_/Desktop/Coderhouse/Backend%20III%20-%20Testing%20y%20Escalabilidad/curso_backend_III/proyecto_back_III/src/modules/adoptions/adoption.service.js:21:32)",
+    "    at create (file:///C:/Users/nico_/Desktop/Coderhouse/Backend%20III%20-%20Testing%20y%20Escalabilidad/curso_backend_III/proyecto_back_III/src/modules/adoptions/adoption.controller.js:42:46)",
+    "    at Layer.handle [as handle_request] (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\layer.js:95:5)",
+    "    at next (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\route.js:149:13)",
+    "    at file:///C:/Users/nico_/Desktop/Coderhouse/Backend%20III%20-%20Testing%20y%20Escalabilidad/curso_backend_III/proyecto_back_III/src/common/middlewares/validateSchema.js:52:5",
+    "    at Layer.handle [as handle_request] (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\layer.js:95:5)",
+    "    at next (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\route.js:149:13)",
+    "    at Route.dispatch (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\route.js:119:3)",
+    "    at Layer.handle [as handle_request] (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\layer.js:95:5)",
+    "    at C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\express\\lib\\router\\index.js:284:15"
+  ],
+  "message": "Class constructor ObjectId cannot be invoked without 'new'",
+  "path": "/api/adoptions",
+  "method": "POST"
+}

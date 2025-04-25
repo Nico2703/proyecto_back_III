@@ -4,7 +4,7 @@ import { userController } from "../modules/users/user.controller.js";
 import { petService } from "../modules/pets/pet.service.js";
 import { userService } from "../modules/users/user.service.js";
 import { validateSchema } from "../common/middlewares/validateSchema.js";
-import { petsMocksSchema } from "../modules/pets/pet.schemas.js";
+import { petsMocksSchema } from "../modules/pets/pet.schema.js";
 import { usersMocksSchema } from "../modules/users/user.schema.js";
 
 const router = Router();
