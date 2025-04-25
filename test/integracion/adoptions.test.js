@@ -2,70 +2,81 @@ import { expect } from "chai";
 import supertest from "supertest";
 import mongoose from "mongoose";
 import envsConfig from "../../src/config/envs.config.js";
-import { petDao } from "../../src/modules/pets/pet.dao.js";
-import { userDao } from "../../src/modules/users/user.dao.js";
 
 const request = supertest("http://localhost:8080");
 
 describe("Test de integración módulo Adoptions", () => {
-    let adoptionTest, userTest, petTest;
+    let userTest;
+    let petTest;
+    let adoptionTest;
 
-    before(async() =>{
+    before(async () => {
         console.log("Inicio de TESTING ADOPTIONS");
         await mongoose.connect(envsConfig.MONGO_URL_TESTING);
 
-        userTest = await userDao.create({
-            first_name: "Marcos",
-            last_name: "Castro",
-            email: "marcos@gmail.com",
-            password: "contraseña1234", 
-        });
-        
-        petTest = await petDao.create({
-            name: "Dumbo",
-            specie: "Perro",
-            birthDate: "11-18-2014",
-            image: "test",
-        });
+        const newUser = {
+        first_name: "Test",
+        last_name: "User",
+        email: "test@gmail.com",
+        password: "testing1234",
+        };
+        const userRes = await request.post("/api/users").send(newUser);
+        userTest = userRes.body;
+
+        const newPet = {
+        name: "Luna",
+        specie: "Perro",
+        birthDate: "05-08-2021",
+        image: "test"
+        };
+        const petRes = await request.post("/api/pets").send(newPet);
+        petTest = petRes.body;
     });
 
     it("Creación de adopción", async () => {
-        const newAdoption = {
-            owner: userTest._id, 
-            pet: petTest._id, 
-        };
+        const res = await request.post("/api/adoptions").send({
+        owner: userTest._id,
+        pet: petTest._id
+        });
 
-        const { status, body, error } = await request.post("/api/adoptions").send(newAdoption);
-    
-        if(error){
-            console.log("Error: ", error);
-        }
+        adoptionTest = res.body;
 
-        adoptionTest = body;
-
-        expect(status).to.be.equal(201);
-        expect(body).to.have.property("_id");
-        expect(body).to.have.property("owner");
-        expect(body).to.have.property("pet");
+        expect(res.status).to.equal(201);
+        expect(adoptionTest).to.have.property("_id");
+        expect(adoptionTest.owner).to.equal(userTest._id);
+        expect(adoptionTest.pet).to.equal(petTest._id);
     });
 
-    it("Obtener adopción", async () => {
-        const { status, body, error } = await request.get(`/api/adoptions/${adoptionTest._id}`);
-        
-        expect(status).to.be.equal(200);
-        expect(body).to.have.property("_id");
-        expect(body).to.have.property("owner");
-        expect(body).to.have.property("pet");
+    it("Obtener adopción por ID", async () => {
+        const res = await request.get(`/api/adoptions/${adoptionTest._id}`);
+
+        expect(res.status).to.equal(200);
+        expect(res.body).to.have.property("_id");
+        expect(res.body.owner._id).to.equal(userTest._id);
+        expect(res.body.pet._id).to.equal(petTest._id);
+    });
+
+    it("Listar adopciones", async () => {
+        const res = await request.get("/api/adoptions");
+
+        expect(res.status).to.equal(200);
+        expect(res.body).to.be.an("array");
+        expect(res.body.length).to.be.greaterThan(0);
+    });
+
+    it("Eliminar adopción", async () => {
+        const res = await request.delete(`/api/adoptions/${adoptionTest._id}`);
+    
+        expect(res.status).to.equal(200);
     });
 
     after(async () => {
         try {
-            await request.delete(`/api/adoptions/${adoptionTest._id}`);
-            await userDao.removeAll();
-            await petDao.removeAll();
-            await mongoose.disconnect();
+        await request.delete(`/api/users/${userTest._id}`);
+        await request.delete(`/api/pets/${petTest._id}`);
+        await mongoose.disconnect();
         } catch (error) {
-            console.log(error);
+        console.log(error);
         }
     });
 });

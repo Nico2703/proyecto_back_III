@@ -171,3 +171,23 @@
   "path": "/api/adoptions",
   "method": "POST"
 }
+2025-04-25 20:26:57 [[31merror[39m]: Estado: 500 [POST] /api/pets -  Mensaje: pets validation failed: birthDate: Cast to date failed for value "21-08-2021" (type string) at path "birthDate"
+2025-04-25 20:26:57 [[31merror[39m]: {
+  "statusCode": 500,
+  "files": [
+    "ValidationError: pets validation failed: birthDate: Cast to date failed for value \"21-08-2021\" (type string) at path \"birthDate\"",
+    "    at Document.invalidate (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\mongoose\\lib\\document.js:3329:32)",
+    "    at model.$set (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\mongoose\\lib\\document.js:1480:12)",
+    "    at model.$set (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\mongoose\\lib\\document.js:1132:16)",
+    "    at model.Document (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\mongoose\\lib\\document.js:178:12)",
+    "    at model.Model (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\mongoose\\lib\\model.js:128:12)",
+    "    at new model (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\mongoose\\lib\\model.js:4800:15)",
+    "    at C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\mongoose\\lib\\model.js:2759:20",
+    "    at Array.map (<anonymous>)",
+    "    at Function.create (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\mongoose\\lib\\model.js:2747:34)",
+    "    at PetDao.create (file:///C:/Users/nico_/Desktop/Coderhouse/Backend%20III%20-%20Testing%20y%20Escalabilidad/curso_backend_III/proyecto_back_III/src/modules/pets/pet.dao.js:5:27)"
+  ],
+  "message": "pets validation failed: birthDate: Cast to date failed for value \"21-08-2021\" (type string) at path \"birthDate\"",
+  "path": "/api/pets",
+  "method": "POST"
+}
