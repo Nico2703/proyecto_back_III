@@ -231,3 +231,81 @@
   "path": "/api/pets",
   "method": "POST"
 }
+2025-04-26 10:21:45 [[31merror[39m]: Estado: 500 [POST] /api/users -  Mensaje: Operation `users.findOne()` buffering timed out after 10000ms
+2025-04-26 10:21:45 [[31merror[39m]: {
+  "statusCode": 500,
+  "files": [
+    "MongooseError: Operation `users.findOne()` buffering timed out after 10000ms",
+    "    at Timeout.<anonymous> (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:187:23)",
+    "    at listOnTimeout (node:internal/timers:573:17)",
+    "    at process.processTimers (node:internal/timers:514:7)"
+  ],
+  "message": "Operation `users.findOne()` buffering timed out after 10000ms",
+  "path": "/api/users",
+  "method": "POST"
+}
+2025-04-26 10:21:46 [[31merror[39m]: Estado: 500 [POST] /api/auth/register -  Mensaje: Operation `users.findOne()` buffering timed out after 10000ms
+2025-04-26 10:21:46 [[31merror[39m]: {
+  "statusCode": 500,
+  "files": [
+    "MongooseError: Operation `users.findOne()` buffering timed out after 10000ms",
+    "    at Timeout.<anonymous> (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:187:23)",
+    "    at listOnTimeout (node:internal/timers:573:17)",
+    "    at process.processTimers (node:internal/timers:514:7)"
+  ],
+  "message": "Operation `users.findOne()` buffering timed out after 10000ms",
+  "path": "/api/auth/register",
+  "method": "POST"
+}
+2025-04-26 10:21:48 [[31merror[39m]: Estado: 500 [POST] /api/auth/login -  Mensaje: Operation `users.findOne()` buffering timed out after 10000ms
+2025-04-26 10:21:48 [[31merror[39m]: {
+  "statusCode": 500,
+  "files": [
+    "MongooseError: Operation `users.findOne()` buffering timed out after 10000ms",
+    "    at Timeout.<anonymous> (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:187:23)",
+    "    at listOnTimeout (node:internal/timers:573:17)",
+    "    at process.processTimers (node:internal/timers:514:7)"
+  ],
+  "message": "Operation `users.findOne()` buffering timed out after 10000ms",
+  "path": "/api/auth/login",
+  "method": "POST"
+}
+2025-04-26 10:21:50 [[31merror[39m]: Estado: 500 [POST] /api/pets -  Mensaje: Operation `pets.insertOne()` buffering timed out after 10000ms
+2025-04-26 10:21:50 [[31merror[39m]: {
+  "statusCode": 500,
+  "files": [
+    "MongooseError: Operation `pets.insertOne()` buffering timed out after 10000ms",
+    "    at Timeout.<anonymous> (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:187:23)",
+    "    at listOnTimeout (node:internal/timers:573:17)",
+    "    at process.processTimers (node:internal/timers:514:7)"
+  ],
+  "message": "Operation `pets.insertOne()` buffering timed out after 10000ms",
+  "path": "/api/pets",
+  "method": "POST"
+}
+2025-04-26 10:21:52 [[31merror[39m]: Estado: 500 [POST] /api/users -  Mensaje: Operation `users.findOne()` buffering timed out after 10000ms
+2025-04-26 10:21:52 [[31merror[39m]: {
+  "statusCode": 500,
+  "files": [
+    "MongooseError: Operation `users.findOne()` buffering timed out after 10000ms",
+    "    at Timeout.<anonymous> (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:187:23)",
+    "    at listOnTimeout (node:internal/timers:573:17)",
+    "    at process.processTimers (node:internal/timers:514:7)"
+  ],
+  "message": "Operation `users.findOne()` buffering timed out after 10000ms",
+  "path": "/api/users",
+  "method": "POST"
+}
+2025-04-26 10:21:55 [[31merror[39m]: Estado: 500 [POST] /api/pets -  Mensaje: Operation `pets.insertOne()` buffering timed out after 10000ms
+2025-04-26 10:21:55 [[31merror[39m]: {
+  "statusCode": 500,
+  "files": [
+    "MongooseError: Operation `pets.insertOne()` buffering timed out after 10000ms",
+    "    at Timeout.<anonymous> (C:\\Users\\nico_\\Desktop\\Coderhouse\\Backend III - Testing y Escalabilidad\\curso_backend_III\\proyecto_back_III\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:187:23)",
+    "    at listOnTimeout (node:internal/timers:573:17)",
+    "    at process.processTimers (node:internal/timers:514:7)"
+  ],
+  "message": "Operation `pets.insertOne()` buffering timed out after 10000ms",
+  "path": "/api/pets",
+  "method": "POST"
+}
