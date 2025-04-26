@@ -1,0 +1,24 @@
+paths:
+  /api/users:
+    post:
+      summary: Crear un nuevo usuario
+      description: Crea un nuevo usuario en el sistema (valida que el email no esté en uso)
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        201:
+          description: Usuario creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        400:
+          description: Email ya en uso
+        500:
+          description: Error en el servidor

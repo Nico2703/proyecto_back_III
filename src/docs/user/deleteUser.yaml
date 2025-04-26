@@ -1,0 +1,26 @@
+paths:
+  /api/users/{id}:
+    delete:
+      summary: Eliminar un usuario por ID
+      description: Elimina un usuario del sistema según el ID pasado
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            format: ObjectId
+          description: ID del usuario a eliminar
+      responses:
+        200:
+          description: Usuario eliminado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        404:
+          description: Usuario no encontrado
+        500:
+          description: Error en el servidor

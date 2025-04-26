@@ -2,7 +2,7 @@ paths:
   /api/users:
     get:
       summary: Obtener todos los usuarios
-      description: Get all users
+      description: Obtiene todos los usuarios existentes en el sistema
       tags:
         - Users
       responses:

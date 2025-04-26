@@ -1,0 +1,53 @@
+paths:
+  /api/auth/login:
+    post:
+      summary: Iniciar sesión de un usuario
+      description: Inicia sesión y devuelve un token de autenticación
+      tags:
+        - Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: Correo electrónico del usuario
+                password:
+                  type: string
+                  description: Contraseña del usuario
+              required:
+                - email
+                - password
+      responses:
+        200:
+          description: Inicio de sesión exitoso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      first_name:
+                        type: string
+                      last_name:
+                        type: string
+                      email:
+                        type: string
+                      role:
+                        type: string
+                      pets:
+                        type: array
+                        items:
+                          type: string
+                  token:
+                    type: string
+                    description: Token JWT de autenticación
+        400:
+          description: Email o password no válidos
+        500:
+          description: Error en el servidor

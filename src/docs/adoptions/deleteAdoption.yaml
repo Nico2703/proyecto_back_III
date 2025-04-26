@@ -1,8 +1,8 @@
 paths:
   /api/adoptions/{id}:
-    get:
-      summary: Obtener adopción por ID
-      description: Devuelve los detalles de una adopción según el ID pasado
+    delete:
+      summary: Eliminar adopción por ID
+      description: Elimina una adopción según el ID pasado
       tags:
         - Adoptions
       parameters:
@@ -14,7 +14,7 @@ paths:
             type: string
       responses:
         200:
-          description: Adopción encontrada
+          description: Adopción eliminada
           content:
             application/json:
               schema:

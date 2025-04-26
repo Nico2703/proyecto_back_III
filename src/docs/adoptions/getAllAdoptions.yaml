@@ -1,0 +1,37 @@
+paths:
+  /api/adoptions:
+    get:
+      summary: Obtener todas las adopciones
+      description: Obtiene una lista de todas las adopciones en el sistema
+      tags:
+        - Adoptions
+      responses:
+        200:
+          description: Lista de adopciones
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Adoption"
+        500:
+          description: Error en el servidor
+
+components:
+  schemas:
+    Adoption:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: ID de la adopción
+        owner:
+          type: string
+          description: ID del dueño de la mascota (usuario)
+        pet:
+          type: string
+          description: ID de la mascota adoptada
+      example:
+        _id: 60b8d295f1a1b9f0c8a2d2f9
+        owner: 5f7e9f9b5f7e9f9b5f7e9f9b
+        pet: 5f7e9f9b5f7e9f9b5f7e9f9b

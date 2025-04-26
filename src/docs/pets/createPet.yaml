@@ -2,7 +2,7 @@ paths:
   /api/pets:
     post:
       summary: Crear una nueva mascota
-      description: Create new Pet
+      description: Crea una nueva mascota
       tags:
         - Pets
       requestBody:

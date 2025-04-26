@@ -1,8 +1,8 @@
 paths:
   /api/pets/{id}:
     get:
-      summary: Obtener un pet por id
-      description: Get pet by id
+      summary: Obtener una mascota por ID
+      description: Obtiene una mascota según el ID pasado
       tags:
         - Pets
       parameters:
@@ -15,7 +15,7 @@ paths:
           description: ID de la mascota
       responses:
         200:
-          description: Retorno de mascota ok
+          description: Retorno de mascota OK
           content:
             application/json:
               schema:
@@ -23,39 +23,3 @@ paths:
         404:
           description: Mascota no encontrada
 
-components:
-  schemas:
-    Pet:
-      type: object
-      items:
-        properties:
-          _id:
-            type: ObjectId
-            description: Id pet
-          name:
-            type: string
-            description: pet name
-          specie:
-            type: string
-            description: pet specie
-          adopted:
-            type: boolean
-            description: adopted
-          owner:
-            type: ObjectId
-            description: pet owner
-          image:
-            type: string
-            description: pet image
-          birthDate:
-            type: string
-            description: pet birthDate
-        example:
-          _id: 5f7e9f9b5f7e9f9b5f7e9f9b
-          name: Firulais
-          specie: Perro
-          adopted: false
-          owner: 5f7e9f9b5f7e9f9b5f7e9f9b
-          image: https://cdn.pixabay.com/photo/2017/02/12/21/27/dog-2061572_1280.jpg
-          birthDate: 12-30-2000
-          
